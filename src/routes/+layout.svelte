@@ -5,6 +5,7 @@
 	import {getApp, getApps, initializeApp} from "firebase/app"; 
 	import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 	import "./app.css";
+	import {onMount} from "svelte";
 
 	const firebaseConfig = {
         apiKey: "AIzaSyBf4SNo_5ENrOwDnVXqWUNkHmLZL1MxYGc",
@@ -17,10 +18,12 @@
     };
 
 	const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-	const appCheck = initializeAppCheck(app, {
-		provider:new ReCaptchaV3Provider("6LcODkwjAAAAANOEEWFqvsizIvAPekS3fUnPL0rc"),
-		isTokenAutoRefreshEnabled:true
-	});
+	onMount(()=>{
+		const appCheck = initializeAppCheck(app, {
+		    provider:new ReCaptchaV3Provider("6LcODkwjAAAAANOEEWFqvsizIvAPekS3fUnPL0rc"),
+	    	isTokenAutoRefreshEnabled:true
+    	});
+	})
 </script>
 <svelte:head>
 	<link rel="scss" href="styles.scss">
