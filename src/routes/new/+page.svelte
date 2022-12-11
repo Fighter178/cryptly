@@ -13,9 +13,7 @@
             });
         };
     } catch {
-        goto("/login").catch(error => {
-            location.replace("/login");
-        });
+        location.replace("/login");
     };
 </script>
 <div class="text-column">
