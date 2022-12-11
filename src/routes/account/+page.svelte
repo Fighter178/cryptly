@@ -3,7 +3,6 @@
 </svelte:head>
 <script>
     import swal from "sweetalert";
-    import "../+page.js";
     import { getNotificationsContext } from "svelte-notifications";
     const { addNotification } = getNotificationsContext();
 	import { onMount } from "svelte";
