@@ -2,19 +2,24 @@
     <title>New Page</title>
 </svelte:head>
 <script>
+	import { browser } from '$app/environment';
 	import { goto } from "$app/navigation";
     import { getAuth } from "firebase/auth";
     import { getApp } from "firebase/app";
-    try {
-        const auth = getAuth(getApp())
-        if (!auth.currentUser || auth.currentUser==null){
-            goto("/login").catch(error => {
-                location.replace("/login");
-            });
+    if (browser) {
+        try {
+            const auth = getAuth(getApp())
+            if (!auth.currentUser || auth.currentUser==null){
+                goto("/login").catch(error => {
+                    location.replace("/login");
+                });
+            };
+        } catch {
+           goto("/login").catch(e => {
+            location.replace("/login");
+           })
         };
-    } catch {
-        location.replace("/login");
-    };
+    }
 </script>
 <div class="text-column">
     <h1>Site Creator</h1>
