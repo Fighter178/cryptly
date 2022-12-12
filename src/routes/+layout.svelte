@@ -7,6 +7,8 @@
 	import "./app.css";
 	import {onMount} from "svelte";
 
+	export const prerender = false;
+	
 	const firebaseConfig = {
         apiKey: "AIzaSyBf4SNo_5ENrOwDnVXqWUNkHmLZL1MxYGc",
         authDomain: "cryptly-a7bcf.firebaseapp.com",
