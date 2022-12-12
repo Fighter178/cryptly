@@ -3,6 +3,7 @@
     <script src="https://cdn.tiny.cloud/1/zbzy2hye6lp8va1tqtn5x811pwjrldgg7h9z6on6bqwqtzmg/tinymce/6/tinymce.min.js" on:load={tinymceloaded} referrerpolicy="origin"></script>
 </svelte:head>
 <script>
+    export const prerender = false
     let tiny;
     let value = ""
     // @ts-ignore

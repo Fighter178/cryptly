@@ -2,6 +2,7 @@
     import GoogleSignInButton from "$lib/googleSignInButton.svelte";
     import SignOutButton from "$lib/SignOutButton.svelte";
     //import AnonymousSignInButton from "$lib/AnonymousSignInButton.svelte";
+    export const prerender = false;
 </script>
 <svelte:head>
     <title>Login</title>

@@ -70,6 +70,7 @@
             elem.addEventListener("click", removeParent);
         })
     }
+    export const prerender = false;
 </script>
 <svelte:window on:mousemove={mouseMove} on:touchmove={touchMove} on:load={handleMovedDraggables}></svelte:window>
 <main>

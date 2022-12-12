@@ -6,6 +6,7 @@
 	import { goto } from "$app/navigation";
     import { getAuth } from "firebase/auth";
     import { getApp } from "firebase/app";
+    export const prerender = false;
     if (browser) {
         try {
             const auth = getAuth(getApp())

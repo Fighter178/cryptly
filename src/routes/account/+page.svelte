@@ -74,6 +74,7 @@
         document.querySelector(`#${content.replace("#","")}-link`)?.classList.add("active");
     })
     $: contentID = content;
+    export const prerender = false;
     /**
      * This function is used in the navbar, to change the style of the active link.
      * @param {Event | undefined } e Event (click event)
